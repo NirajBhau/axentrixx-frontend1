@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Netlify Forms</title>
+</head>
+<body>
+  <!-- Hidden forms for Netlify detection -->
+  
+  <!-- Contact Form -->
+  <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <input type="tel" name="phone" />
+    <input type="text" name="company" />
+    <select name="service">
+      <option value="Web Development">Web Development</option>
+      <option value="Mobile App Development">Mobile App Development</option>
+      <option value="Healthcare Management">Healthcare Management</option>
+      <option value="Business Intelligence">Business Intelligence</option>
+      <option value="Data Analytics">Data Analytics</option>
+    </select>
+    <textarea name="message"></textarea>
+  </form>
+
+  <!-- Newsletter Form -->
+  <form name="newsletter" netlify netlify-honeypot="bot-field" hidden>
+    <input type="email" name="email" />
+  </form>
+
+  <!-- Request Quote Form -->
+  <form name="request-quote" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <input type="tel" name="phone" />
+    <input type="text" name="company" />
+    <select name="service">
+      <option value="Web Development">Web Development</option>
+      <option value="Mobile App">Mobile App</option>
+      <option value="Healthcare System">Healthcare System</option>
+    </select>
+    <select name="budget">
+      <option value="Under $10k">Under $10k</option>
+      <option value="$10k - $50k">$10k - $50k</option>
+      <option value="$50k+">$50k+</option>
+    </select>
+    <select name="timeline">
+      <option value="1-3 months">1-3 months</option>
+      <option value="3-6 months">3-6 months</option>
+      <option value="6+ months">6+ months</option>
+    </select>
+    <textarea name="projectDetails"></textarea>
+  </form>
+
+  <!-- Book Consultation Form -->
+  <form name="book-consultation" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <input type="tel" name="phone" />
+    <input type="text" name="company" />
+    <select name="serviceInterest">
+      <option value="Web Development">Web Development</option>
+      <option value="Mobile App">Mobile App</option>
+      <option value="Healthcare System">Healthcare System</option>
+    </select>
+    <input type="date" name="preferredDate" />
+    <textarea name="additionalInfo"></textarea>
+  </form>
+
+  <!-- Career Application Form -->
+  <form name="career-application" netlify netlify-honeypot="bot-field" enctype="multipart/form-data" hidden>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <input type="tel" name="phone" />
+    <select name="position">
+      <option value="Full Stack Developer">Full Stack Developer</option>
+      <option value="Frontend Developer">Frontend Developer</option>
+      <option value="Backend Developer">Backend Developer</option>
+    </select>
+    <input type="file" name="resume" />
+    <textarea name="coverLetter"></textarea>
+  </form>
+
+  <!-- HMS Waitlist Form -->
+  <form name="hms-waitlist" netlify netlify-honeypot="bot-field" hidden>
+    <input type="email" name="email" />
+    <input type="text" name="organizationName" />
+    <input type="tel" name="phone" />
+  </form>
+
+  <!-- Healthcare Waitlist Form -->
+  <form name="healthcare-waitlist" netlify netlify-honeypot="bot-field" hidden>
+    <input type="email" name="email" />
+    <input type="text" name="organizationName" />
+  </form>
+
+  <!-- Products Waitlist Form -->
+  <form name="products-waitlist" netlify netlify-honeypot="bot-field" hidden>
+    <input type="email" name="email" />
+  </form>
+
+</body>
+</html>
