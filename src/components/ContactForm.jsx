@@ -1,7 +1,53 @@
 import { useState } from 'react';
 
 export default function ContactForm() {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        service: '',
+        message: ''
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitted, setSubmitted] = useState(false);
+    const [error, setError] = useState('');
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setError('');
+
+        try {
+            const response = await fetch('https://axentrixx-backend-1.onrender.com/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            });
+
+            if (response.ok) {
+                setSubmitted(true);
+                setFormData({ name: '', email: '', phone: '', company: '', service: '', message: '' });
+            } else {
+                const data = await response.json();
+                setError(data.message || 'Something went wrong. Please try again.');
+            }
+        } catch (err) {
+            setError('Failed to send message. Please try again later.');
+            console.error('Error:', err);
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
     if (submitted) {
         return (
@@ -25,24 +71,16 @@ export default function ContactForm() {
 
     return (
         <form
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
+            onSubmit={handleSubmit}
             className="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl p-8"
-            onSubmit={(e) => {
-                // Let Netlify handle the submission
-                // Show success message after a brief delay
-                setTimeout(() => setSubmitted(true), 500);
-            }}
         >
-            {/* Hidden fields for Netlify */}
-            <input type="hidden" name="form-name" value="contact" />
-            <p hidden>
-                <label>Don't fill this out: <input name="bot-field" /></label>
-            </p>
-
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Get In Touch</h2>
+
+            {error && (
+                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700">
+                    {error}
+                </div>
+            )}
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
@@ -52,6 +90,8 @@ export default function ContactForm() {
                     <input
                         type="text"
                         name="name"
+                        value={formData.name}
+                        onChange={handleChange}
                         required
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                         placeholder="John Doe"
@@ -65,6 +105,8 @@ export default function ContactForm() {
                     <input
                         type="email"
                         name="email"
+                        value={formData.email}
+                        onChange={handleChange}
                         required
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                         placeholder="john@example.com"
@@ -80,6 +122,8 @@ export default function ContactForm() {
                     <input
                         type="tel"
                         name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                         placeholder="+91 1234567890"
                     />
@@ -92,6 +136,8 @@ export default function ContactForm() {
                     <input
                         type="text"
                         name="company"
+                        value={formData.company}
+                        onChange={handleChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                         placeholder="Your Company"
                     />
@@ -104,6 +150,8 @@ export default function ContactForm() {
                 </label>
                 <select
                     name="service"
+                    value={formData.service}
+                    onChange={handleChange}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
@@ -124,6 +172,8 @@ export default function ContactForm() {
                 </label>
                 <textarea
                     name="message"
+                    value={formData.message}
+                    onChange={handleChange}
                     required
                     rows="5"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
@@ -133,9 +183,10 @@ export default function ContactForm() {
 
             <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 px-8 rounded-lg transition-all transform hover:scale-105 shadow-lg"
+                disabled={isSubmitting}
+                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 px-8 rounded-lg transition-all transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
             >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
 
             <p className="text-xs text-gray-500 mt-4 text-center">
