@@ -96,94 +96,94 @@ export default function FooterDesign3() {
                     {/* Quick Links & Services */}
                     <div className="lg:col-span-5 grid grid-cols-2 gap-6">
                         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-                            <h3 className="text-white font-bold mb-4 text-sm'>QUICK LINKS</h3>
-              <ul className="space-y-2">
-                            {['About', 'Services', 'Products', 'Case Studies', 'Careers', 'Contact'].map((item) => (
-                                <li key={item}>
-                                    <a href={`/${item.toLowerCase().replace(' ', '-')}`} className="text-white/80 hover:text-white text-[13px] flex items-center group">
-                                        <ArrowUpRight className="w-3 h-3 mr-1 opacity-0 group-hover:opacity-100 transition-opacity" />
-                                        {item}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
+                            <h3 className="text-white font-bold mb-4 text-sm">QUICK LINKS</h3>
+                            <ul className="space-y-2">
+                                {['About', 'Services', 'Products', 'Case Studies', 'Careers', 'Contact'].map((item) => (
+                                    <li key={item}>
+                                        <a href={`/${item.toLowerCase().replace(' ', '-')}`} className="text-white/80 hover:text-white text-sm flex items-center group">
+                                            <ArrowUpRight className="w-3 h-3 mr-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                                            {item}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+                            <h3 className="text-white font-bold mb-4 text-sm">SERVICES</h3>
+                            <ul className="space-y-2">
+                                {[
+                                    'Web Development',
+                                    'Mobile Apps',
+                                    'Healthcare Systems',
+                                    'Business Intelligence',
+                                    'Data Analytics'
+                                ].map((item) => (
+                                    <li key={item}>
+                                        <a href="/services" className="text-white/80 hover:text-white text-[13px] flex items-center group">
+                                            <ArrowUpRight className="w-3 h-3 mr-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                                            {item}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
 
-                    <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-                        <h3 className="text-white font-bold mb-4 text-sm">SERVICES</h3>
-                        <ul className="space-y-2">
-                            {[
-                                'Web Development',
-                                'Mobile Apps',
-                                'Healthcare Systems',
-                                'Business Intelligence',
-                                'Data Analytics'
-                            ].map((item) => (
-                                <li key={item}>
-                                    <a href="/services" className="text-white/80 hover:text-white text-[13px] flex items-center group">
-                                        <ArrowUpRight className="w-3 h-3 mr-1 opacity-0 group-hover:opacity-100 transition-opacity" />
-                                        {item}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
+                    {/* Newsletter */}
+                    <div className="lg:col-span-3">
+                        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 h-full">
+                            <h3 className="text-white font-bold mb-3 text-sm">STAY UPDATED</h3>
+                            <p className="text-white/80 text-xs mb-4">Subscribe to get latest updates and insights.</p>
+                            <NewsletterForm />
+                        </div>
                     </div>
                 </div>
 
-                {/* Newsletter */}
-                <div className="lg:col-span-3">
-                    <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 h-full">
-                        <h3 className="text-white font-bold mb-3 text-sm">STAY UPDATED</h3>
-                        <p className="text-white/80 text-xs mb-4">Subscribe to get latest updates and insights.</p>
-                        <NewsletterForm />
+                {/* Contact Info */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                    <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 flex items-center gap-3">
+                        <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
+                            <Mail className="w-5 h-5 text-white" />
+                        </div>
+                        <div>
+                            <p className="text-white/60 text-xs">Email</p>
+                            <p className="text-white text-sm font-semibold">contact@axentrixx.com</p>
+                        </div>
+                    </div>
+
+                    <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 flex items-center gap-3">
+                        <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
+                            <Phone className="w-5 h-5 text-white" />
+                        </div>
+                        <div>
+                            <p className="text-white/60 text-xs">Phone</p>
+                            <p className="text-white text-sm font-semibold">+91 1234567890</p>
+                        </div>
+                    </div>
+
+                    <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 flex items-center gap-3">
+                        <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
+                            <MapPin className="w-5 h-5 text-white" />
+                        </div>
+                        <div>
+                            <p className="text-white/60 text-xs">Location</p>
+                            <p className="text-white text-sm font-semibold">Mumbai, India</p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Bottom Bar */}
+                <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p className="text-white/60 text-xs text-center md:text-left">
+                        © 2024 Axentrixx. All rights reserved. Built with ❤️ in India.
+                    </p>
+                    <div className="flex gap-6 text-xs">
+                        <a href="/privacy" className="text-white/60 hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="/terms" className="text-white/60 hover:text-white transition-colors">Terms of Service</a>
                     </div>
                 </div>
             </div>
-
-            {/* Contact Info */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-                <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 flex items-center gap-3">
-                    <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
-                        <Mail className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                        <p className="text-white/60 text-xs">Email</p>
-                        <p className="text-white text-sm font-semibold">contact@axentrixx.com</p>
-                    </div>
-                </div>
-
-                <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 flex items-center gap-3">
-                    <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
-                        <Phone className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                        <p className="text-white/60 text-xs">Phone</p>
-                        <p className="text-white text-sm font-semibold">+91 1234567890</p>
-                    </div>
-                </div>
-
-                <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 flex items-center gap-3">
-                    <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
-                        <MapPin className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                        <p className="text-white/60 text-xs">Location</p>
-                        <p className="text-white text-sm font-semibold">Mumbai, India</p>
-                    </div>
-                </div>
-            </div>
-
-            {/* Bottom Bar */}
-            <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p className="text-white/60 text-xs text-center md:text-left">
-                    © 2024 Axentrixx. All rights reserved. Built with ❤️ in India.
-                </p>
-                <div className="flex gap-6 text-xs">
-                    <a href="/privacy" className="text-white/60 hover:text-white transition-colors">Privacy Policy</a>
-                    <a href="/terms" className="text-white/60 hover:text-white transition-colors">Terms of Service</a>
-                </div>
-            </div>
-        </div>
-    </footer >
-  );
+        </footer >
+    );
 }
