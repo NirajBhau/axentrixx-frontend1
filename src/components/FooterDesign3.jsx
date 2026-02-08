@@ -101,7 +101,7 @@ export default function FooterDesign3() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-50 dark:bg-[#0F0F0F]">
+    <footer className="bg-white dark:bg-[#0F0F0F]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16">
         {/* Main Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
