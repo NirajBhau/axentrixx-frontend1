@@ -106,7 +106,7 @@ export default function FooterDesign3() {
         {/* Main Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
           {/* Company Card */}
-          <div className="bg-white dark:bg-[#1A1A1A] rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+          <div className="bg-blue-50/50 dark:bg-[#1A1A1A] rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-12 h-12 bg-gradient-to-br from-[#2563EB] to-[#7C3AED] rounded-xl flex items-center justify-center shadow-lg">
                 <span className="text-white font-bold text-xl">A</span>
@@ -119,19 +119,19 @@ export default function FooterDesign3() {
 
             <div className="space-y-3">
               <a href="https://mail.google.com/mail/?view=cm&fs=1&to=advikpatel55@gmail.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-[#606060] dark:text-white/70 hover:text-[#2563EB] dark:hover:text-white transition-colors text-[13px]">
-                <div className="w-8 h-8 bg-blue-50 dark:bg-blue-500/10 rounded-lg flex items-center justify-center">
+                <div className="w-8 h-8 bg-blue-100 dark:bg-blue-500/10 rounded-lg flex items-center justify-center">
                   <Mail size={14} className="text-[#2563EB]" />
                 </div>
                 advikpatel55@gmail.com
               </a>
               <a href="tel:+15551234567" className="flex items-center gap-3 text-[#606060] dark:text-white/70 hover:text-[#2563EB] dark:hover:text-white transition-colors text-[13px]">
-                <div className="w-8 h-8 bg-blue-50 dark:bg-blue-500/10 rounded-lg flex items-center justify-center">
+                <div className="w-8 h-8 bg-blue-100 dark:bg-blue-500/10 rounded-lg flex items-center justify-center">
                   <Phone size={14} className="text-[#2563EB]" />
                 </div>
                 +1 (555) 123-4567
               </a>
               <div className="flex items-center gap-3 text-[#606060] dark:text-white/70 text-[13px]">
-                <div className="w-8 h-8 bg-blue-50 dark:bg-blue-500/10 rounded-lg flex items-center justify-center">
+                <div className="w-8 h-8 bg-blue-100 dark:bg-blue-500/10 rounded-lg flex items-center justify-center">
                   <MapPin size={14} className="text-[#2563EB]" />
                 </div>
                 San Francisco, CA
@@ -140,7 +140,7 @@ export default function FooterDesign3() {
           </div>
 
           {/* Links Card */}
-          <div className="bg-white dark:bg-[#1A1A1A] rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+          <div className="bg-blue-50/50 dark:bg-[#1A1A1A] rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
             <div className="grid grid-cols-2 gap-8">
               <div>
                 <h4 className="text-[#111] dark:text-white font-bold mb-4 text-[14px]">Quick Links</h4>
