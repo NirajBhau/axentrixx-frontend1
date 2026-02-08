@@ -1,6 +1,4 @@
 import { useState } from 'react';
-
-// DESIGN 3: Card-Based Modern - Everything in cards with shadows and depth
 import {
   Mail,
   Phone,
@@ -11,8 +9,6 @@ import {
   Instagram,
   ArrowUpRight,
 } from "lucide-react";
-
-// ... (existing imports)
 
 function NewsletterForm() {
   const [email, setEmail] = useState('');
@@ -103,7 +99,6 @@ function NewsletterForm() {
 
 export default function FooterDesign3() {
   const currentYear = new Date().getFullYear();
-  // ... (rest of the file)
 
   return (
     <footer className="bg-gray-50 dark:bg-[#0F0F0F]">
